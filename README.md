@@ -1,29 +1,9 @@
-# movie_Ticket using HTML,CSS 
-This website, called “ movie_ticket ”, will allow for the company to access
-their database securely and safely in a user-friendly online environment.
-Allowing for them to change movies information with ease. The Website
-will be in sync with cinemas, allowing for real-time up-to-date services for
-their customers.
-Both registered and non-registered users will be able to search movies and
-events. They will also be able to select and pay for the service. The
-consumer would choose the date and time same as in-person purchase. The
-company would instantly get that service demand through their 24/7 built
-support directly and will reserve the seat and send confirmation to the
-customer. The Website will be responsive to any device using it. This allows
-for consumers to access the service from any sort of hardware device:
-tablet, computer, mobile devices, and so on. 
+#movie Ticket Html,css
+This Is the code of app.py but I want this file into 2 files one is app.py it need to contains sql lite database for local deployment and second one is need to be aws_app.py it need to be contain database dynamo db to create tables and to send sns notifications to send mails to user . I need full modified two full version code files..after running it url need to generate and need to redirect to the chrome browser directly for both files.
 
 
 
 
-▪ USABILITY
- The user is able to easily interact with the website.
-▪ MAINTAINABILITY
-The faults in the website should be easily found and fixed.
-▪ SCALABILITY
-The website is able to expand its processing capabilities to
-support its growth.
-▪ ACCESSIBILITY
-The website is accessible by the people.
-▪ AVAILABILITY
-The website is available to people at all times
+
+
+i just need code in my way according to prompt why u changing movies like dummy movies just do changes like This Is the code of app.py but I want this file into 2 files one is app.py it need to contains sql lite database for local deployment like to manage credentials,tickets management and second one is need to be aws_app.py it need to be contain database dynamo db to create tables and to send sns notifications to send mails to user i need code here. I need full modified two full version code files..after running it url need to generate and need to redirect to the chrome browser directly for both files remaining all are same
