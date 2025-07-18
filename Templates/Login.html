@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Movie Magic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+
+  <div class="overlay">
+   <div class="login-container">
+  <h2>🔓 Sign In to Book Your Movie</h2>
+  <p style="background:red; color:white;">Registration successful! Please login.</p>
+  <form method="POST" action="/login">
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="password" name="password" placeholder="Password" required><br>
+    <button type="submit">Login</button>
+  </form>
+  <p>New user? <a href="/register">Register here</a></p>
+</div>
+
+
+</body>
+</html>

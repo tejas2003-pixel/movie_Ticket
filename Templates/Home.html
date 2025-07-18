@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Now Showing - Movie Magic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="home-page">
+
+  <!-- Header Section -->
+  <div class="header">
+    <h1 class="welcome-text">🎬 Welcome to Movie Magic</h1>
+    <input type="text" class="search-bar" placeholder="Search for a movie...">
+  </div>
+
+  <!-- Movie Cards Row -->
+  <div class="movie-row">
+    <div class="movie-card">
+      <img src='{{ url_for("static", filename="kuberaa.jpg") }}' alt="kuberaa">
+      <h2>Kuberaa</h2>
+      <a href="/booking?title=Kubera" class="btn">Book Now</a>
+    </div>
+
+    <div class="movie-card">
+      <img src="{{ url_for('static', filename='Eleven.webp') }}" alt="Eleven">
+      <h2>Eleven</h2>
+      <a href="/booking?title=Eleven" class="btn">Book Now</a>
+    </div>
+
+    <div class="movie-card">
+      <img src="{{ url_for('static', filename='Devara.jpg') }}" alt="Devara">
+      <h2>Devara</h2>
+      <a href="/booking?title=Devara" class="btn">Book Now</a>
+    </div>
+
+    <div class="movie-card">
+      <img src="{{ url_for('static', filename='Animal.jpg') }}" alt="Animal">
+      <h2>Animal</h2>
+      <a href="/booking?title=Animal" class="btn">Book Now</a>
+    </div>
+  </div>
+
+</body>
+</html>

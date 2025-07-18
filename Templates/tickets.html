@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ticket Confirmation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="ticket2">
+  <div class="confirmation-container">
+    <h2>✅ Booking Confirmed!!</h2>
+
+    <p><strong>Movie:</strong> {{ title }}</p>
+    <p><strong>Seats:</strong> {{ seats }}</p>
+    <p><strong>Total:</strong> ₹{{ total }}</p>
+
+    <a href="{{ url_for('home') }}"><button class="btn btn-home">Home</button></a>
+    <a href="{{ url_for('dashboard') }}"><button class="btn btn-dashboard">🎟️ View Dashboard</button></a>
+    <a href="{{ url_for('logout') }}"><button class="btn btn-dashboard">Logout</button></a> 
+    <a href="#"><button class="btn btn-dashboard" onclick="window.print()">print</button></a>
+  </div>
+</body>
+</html>

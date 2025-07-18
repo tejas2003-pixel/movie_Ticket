@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='services.css') }}">
+</head>
+<body>
+
+    <div class="services-container">
+        <h1>Our Services</h1>
+
+        <div class="service-card">
+            <h2>Movie Ticket Booking</h2>
+            <p>Book tickets for the latest movies in just a few clicks. Choose your preferred seat and showtime.</p>
+        </div>
+
+        <div class="service-card">
+            <h2>Seat Selection</h2>
+            <p>Select seats as per your choice with our interactive seating layout.</p>
+        </div>
+
+        <div class="service-card">
+            <h2>QR Code Ticket Generation</h2>
+            <p>Get a digital ticket with a QR code for easy entry and verification at the cinema hall.</p>
+        </div>
+
+        <div class="service-card">
+            <h2>Account Management</h2>
+            <p>Manage your profile, view past bookings, and update your preferences with ease.</p>
+        </div>
+    </div>
+    <a href="{{ url_for('home') }}" class="back-home-btn">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome - Movie Magic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="indexpage">
+
+<div class="container">
+    
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="{{ url_for('about') }}" class="nav-btn">About</a>
+        <a href="{{ url_for('services') }}" class="nav-btn">Services</a>
+        <a href="{{ url_for('contact') }}" class="nav-btn">Contact Us</a>
+    </div>
+
+    <h1>🎬 Welcome to Movie Magic</h1>
+    <p>Your gateway to blockbuster experiences!</p>
+
+    <!-- Auth Buttons -->
+    <div class="auth-buttons">
+        <a href="{{ url_for('login') }}" class="btn">Login</a>
+        <a href="{{ url_for('register') }}" class="btn">Register</a>
+    </div>
+
+</div>
+</body>
+</html>

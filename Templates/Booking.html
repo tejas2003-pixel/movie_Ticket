@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Tickets - {{ movie.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="booking-page">
+
+  <div class="booking-wrapper">
+
+    <!-- 🎬 Movie Info -->
+    <div class="movie-info">
+      <img src="{{ url_for('static', filename=movie.image) }}" alt="{{ movie.title }}" class="movie-poster">
+      <h2 class="movie-title">🎟 Booking for {{ movie.title }}</h2>
+      <p class="ticket-price">💰 Price Per Ticket: ₹{{ movie.price }}</p>
+    </div>
+
+    <!-- 🎭 Showtime Form -->
+    <form method="POST" action="{{ url_for('seating', title=movie.title) }}">
+
+      <!-- 🏢 Theatre Options -->
+      {% for theatre in movie.theatres %}
+      <div class="theater-block">
+        <h3>🏢 {{ theatre.name }}</h3>
+        <div class="timing-options">
+          {% for time in theatre.timings %}
+          <label class="time-btn">
+            <input type="radio" name="show_time" value="{{ theatre.name }}|{{ time }}" required>
+            <span>{{ time }}</span>
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+
+      <!-- 🔘 Submit -->
+      <div style="text-align: center; margin-top: 30px;">
+        <button type="submit" class="btn-book">🔘 Continue to Seat Selection</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Select Seats - {{ movie.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="seating-page">
+  <div class="seating-container">
+    <h2>🎫 Select Your Seats for {{ movie.title }}</h2>
+    
+    <form method="POST">
+      <!-- Premium Section -->
+      <div class="section-title">Premium Seats (₹250)</div>
+      <div id="premium-grid" class="seat-grid"></div>
+
+      <!-- Gold Section -->
+      <div class="section-title">Gold Seats (₹170)</div>
+      <div id="gold-grid" class="seat-grid"></div>
+
+      <!-- Hidden Inputs -->
+      <input type="hidden" name="seats" id="selectedSeats">
+      <input type="hidden" name="movie" value="{{ movie.title }}">
+      
+      <button type="submit" class="btn">Confirm Booking</button>
+    </form>
+  </div>
+
+  <script>
+    const selectedSeats = [];
+
+    function createSeats(gridId, startRow, rowCount, type) {
+      const grid = document.getElementById(gridId);
+      for (let row = startRow; row < startRow + rowCount; row++) {
+        const r = String.fromCharCode(row);
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'seat-row';
+
+        for (let col = 1; col <= 12; col++) {
+          const seat = document.createElement('button');
+          seat.type = 'button';
+          seat.className = `seat ${type}`;
+          seat.textContent = `${r}${col}`;
+          seat.onclick = function () {
+            seat.classList.toggle('selected');
+            const seatInfo = `${seat.textContent}:${type}`;
+            if (selectedSeats.includes(seatInfo)) {
+              selectedSeats.splice(selectedSeats.indexOf(seatInfo), 1);
+            } else {
+              selectedSeats.push(seatInfo);
+            }
+            document.getElementById('selectedSeats').value = selectedSeats.join(',');
+          };
+          rowDiv.appendChild(seat);
+        }
+        grid.appendChild(rowDiv);
+      }
+    }
+
+    // Generate Seats
+    createSeats('premium-grid', 65, 5, 'premium'); // Rows A-E
+    createSeats('gold-grid', 70, 5, 'gold');       // Rows F-J
+  </script>
+</body>
+</html>

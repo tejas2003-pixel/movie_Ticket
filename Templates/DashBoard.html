@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Bookings - Movie Magic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="booking-body dashboard">
+  <div class="booking-container">
+    <h2>🎟 My Bookings</h2>
+
+    {% if bookings %}
+      <table class="booking-table">
+        <thead>
+          <tr>
+            <th>Movie</th>
+            <th>Seats</th>
+            <th>Price per Ticket</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for booking in bookings %}
+          <tr>
+            <td>{{ booking.movie }}</td>
+            <td>{{ booking.seats }}</td>
+            <td>₹{{ booking.price }}</td>
+            <td>₹{{ booking.total }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="no-bookings">No bookings yet.</p>
+    {% endif %}
+
+    <a href="/home" class="btn">Book Another</a>
+    <a href="/" class="btn logout">Logout</a>
+  </div>
+</body>
+</html>
